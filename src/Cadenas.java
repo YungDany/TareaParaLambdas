@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.stream.Collectors;
 
 public class Cadenas {
@@ -21,5 +22,14 @@ public class Cadenas {
                 .map(s -> (s!=null) ? s.toUpperCase() :null)
                 .collect(Collectors.toCollection(ArrayList::new));
 
+    }
+
+    public static HashMap<String,Integer> mapearLongitudCadena(ArrayList<String> lista){
+        if(lista==null){
+            return new HashMap<>();
+        }
+        return lista.stream()
+                .filter(s->s!=null)
+                .collect(Collectors.toMap(s->s,String::length,(existente,nuevo)->existente, HashMap::new));
     }
 }
