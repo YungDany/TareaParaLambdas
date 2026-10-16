@@ -67,5 +67,17 @@ public class Cadenas {
         return frecuencias;
     }
 
+    public static ArrayList<String> filtrarPalabrasPorFrecuencia(Map<String, Integer> mapaFrecuencias, int umbral) {
+        if (mapaFrecuencias == null) {
+            return new ArrayList<>(); // Retorna lista vacía si el mapa es nulo
+        }
+
+        return mapaFrecuencias.entrySet().stream()
+                .filter(entry -> entry.getKey() != null && entry.getValue() != null && entry.getValue() >= umbral)
+                .map(Map.Entry::getKey)
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
 }
+
+
 
