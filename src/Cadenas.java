@@ -1,8 +1,5 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
-import java.util.Arrays;
 
 public class Cadenas {
 
@@ -77,6 +74,20 @@ public class Cadenas {
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
+
+    public static HashSet<String> procesarFrasePalabras(String frase, int n) {
+        if (frase == null || frase.trim().isEmpty()) {
+            return new HashSet<>(); // Retorna conjunto vacío si la frase es nula o vacía
+        }
+
+        return Arrays.stream(frase.split("\\s+"))
+                // Elimina puntuación básica pegada a las palabras
+                .map(p -> p.replaceAll("[^a-zA-ZáéíóúÁÉÍÓÚñÑ0-9]", ""))
+                .map(String::toLowerCase)
+                .filter(p -> p.length() >= n)
+                .collect(Collectors.toCollection(HashSet::new));
+    }
+
 }
 
 
