@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Cadenas {
@@ -31,5 +32,21 @@ public class Cadenas {
         return lista.stream()
                 .filter(s->s!=null)
                 .collect(Collectors.toMap(s->s,String::length,(existente,nuevo)->existente, HashMap::new));
+    }
+
+    public static void imprimirCatalogoConDescuento(Map<String,Double> productos){
+        if(productos==null || productos.isEmpty()){
+            System.out.println("El catálogo está vacío o es nula ");
+            return;
+        }
+        System.out.println("Catálogo con 10% de descuento ");
+        productos.forEach((producto,precio)->{
+            if(producto!=null &&precio!=null){
+                double precioConDescuento=precio*.90;
+                System.out.printf("Producto: %-15s | Precio Orig: $%6.2f | Con desc: $%6.2f%n",
+                        producto, precio, precioConDescuento);
+            }
+        });
+
     }
 }
