@@ -1,10 +1,10 @@
 # TareaParaLambdas
 
-Proyecto desarrollado en Java enfocado en la aplicación de programación funcional, expresiones lambda, la API Stream y el uso de colecciones (ArrayList, HashSet y HashMap).
+Proyecto desarrollado en Java enfocado en la aplicación de programación funcional, expresiones lambda, Stream y el uso de colecciones (ArrayList, HashSet y HashMap).
 
 ## Descripción del Proyecto
 
-Este repositorio contiene la solución a una asignación de 10 métodos estáticos orientados al procesamiento de colecciones, filtrado de datos, transformaciones de cadenas, manipulación de mapas y manejo de valores nulos utilizando sintaxis moderna de Java.
+Este repositorio contiene el diseño de 10 métodos desarrollados en Java que usa funciones lambdas para lograr un código más limpio y ordenado que realice ciertas tareas.
 
 ---
 
