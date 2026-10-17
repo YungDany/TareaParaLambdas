@@ -88,7 +88,17 @@ public class Cadenas {
                 .collect(Collectors.toCollection(HashSet::new));
     }
 
-}
+    public static void limitarFrecMax(Map<String,Integer> mapaFrecuencias, int n){
+        if(mapaFrecuencias==null || mapaFrecuencias.isEmpty()){
+            return;
+        }
+        mapaFrecuencias.replaceAll((palabra, frecuencia) ->
+                (frecuencia != null && frecuencia > n) ? n : frecuencia
+        );
+        }
+    }
+
+
 
 
 
